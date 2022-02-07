@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useMemo, useState } from 'react';
 import ClientsList from './components/ClientsList'
+import Modal from './components/Modal/Modal';
 import Navbar from './components/Navbar';
 import './styles/App.css'
 
@@ -8,6 +9,8 @@ function App() {
 
   const [clientsList, setClientsList] = useState([])
   const [searchQuery, setSearchQuery] = useState("")
+  const [modalActive, setModalActive] = useState(false)
+  const [clientItem, setClientItem] = useState({})
 
   useEffect(() => {
     fetchClients()
@@ -30,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      
+
       <div style={{ width: "400px" }}>
         <input 
             className="form-control me-2"
@@ -42,8 +45,10 @@ function App() {
         </input>
       </div>
 
-      <h3 style={{ textAlign: 'center' }}>Список клиентов</h3>
-      <ClientsList clients={searchedClientsList} />
+      <ClientsList clients={searchedClientsList} setModalActive = {setModalActive} setClientItem = {setClientItem} />
+
+      <Modal active = {modalActive} setActive = {setModalActive} clientItem = {clientItem} />  
+
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react"
 
-const ClientItem = ({ client, index }) => {
+const ClientItem = ({client, index, setModalActive, setClientItem}) => {
 
     if (client.configuration_1c === "Зарплата и кадры государственного учреждения редакция 3.1") {
         client.configuration_1c = "ЗГУ редакция 3.1"
@@ -10,8 +10,16 @@ const ClientItem = ({ client, index }) => {
         client.configuration_1c = "БГУ редакция 2.0"
     }
 
+    function clickedClientItem(event) {
+
+        if (event._reactName = "onclick") {
+            setModalActive(true)
+            setClientItem(client)
+        }
+    }
+
     return (
-        <tr>
+        <tr onClick={clickedClientItem}>
             <th scope="row">{index}</th>
             <td >{client.client_name}</td>
             <td>{client.inn}</td>

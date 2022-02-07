@@ -1,10 +1,11 @@
 import React from "react"
 import ClientItem from "./ClientItem"
 
-const ClientsList = ({ clients }) => {
+const ClientsList = ({clients, setModalActive, setClientItem}) => {
 
     return (
         <div className="clientsListContainer">
+            <h3 style={{ textAlign: 'center' }}>Список клиентов</h3>
             <table className="table table-hover">
                 <thead className="clientsTableHeading">
                     <tr>
@@ -20,7 +21,7 @@ const ClientsList = ({ clients }) => {
                 </thead>
                 <tbody>
                     {clients.map((client, index) =>
-                        <ClientItem key={client._id} client={client} index={index + 1} />
+                        <ClientItem key={client._id} client={client} index={index + 1} setModalActive ={setModalActive} setClientItem = {setClientItem}/>
                     )}
                 </tbody>
             </table>
