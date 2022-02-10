@@ -41,7 +41,7 @@ router.post('/addClientInfo', async (req, res) => {
         configuration_1c: configuration_1c,
         conf_version: conf_version,
         date_info: dateInfo,
-        conf_nordis_tarification,
+        conf_nordis_tarification: conf_nordis_tarification,
     })
 
     await client.save()

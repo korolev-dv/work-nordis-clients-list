@@ -26,8 +26,6 @@ const ClientItem = ({client, index, setModalActive, setClientItem}) => {
             <td>{client.configuration_1c}</td>
             <td>{client.conf_version}</td>
             <td>{client.platform_version}</td>
-            {/* <td>{client.conf_nordis_tarification}</td>
-            <td>{client.date_info}</td> */}
         </tr>
     )
 }

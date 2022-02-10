@@ -33,7 +33,14 @@ const schema = new Schema({
     },
     conf_nordis_tarification: {
         type: Boolean    
-    }
+    },
+    extensions: [{
+        name: String,
+        synonym: String,
+        version: String,
+        active: Boolean,
+    }],
+
 })
 
 module.exports = model('client', schema)

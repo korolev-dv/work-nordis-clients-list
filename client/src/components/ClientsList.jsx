@@ -15,8 +15,6 @@ const ClientsList = ({clients, setModalActive, setClientItem}) => {
                         <th scope="col">Конфигурация 1С</th>
                         <th scope="col">Версия</th>
                         <th scope="col">Платформа</th>
-                        {/* <th scope="col">Используется тарификация</th>
-                        <th scope="col">Дата актуальности</th> */}
                     </tr>
                 </thead>
                 <tbody>
