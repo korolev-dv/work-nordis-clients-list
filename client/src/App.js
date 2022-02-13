@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useMemo, useState } from 'react';
+import ClientService from './API/ClientService';
 import ClientsList from './components/ClientsList'
 import Modal from './components/Modal/Modal';
 import Navbar from './components/Navbar';
@@ -17,8 +18,8 @@ function App() {
   }, [])
 
   async function fetchClients() {
-    const response = await axios.get("http://62.192.227.9:7000/api/getClientsList")
-    setClientsList(response.data)
+    const clients = await ClientService.getAll()
+    setClientsList(clients)
   }
 
   const searchedClientsList = useMemo(() => {

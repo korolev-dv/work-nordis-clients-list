@@ -14,7 +14,7 @@ router.get('/getClientInfo', async (req, res) => {
 })
 
 router.post('/addClientInfo', async (req, res) => {
-    const {client_name, client_full_name, inn, platform_version, configuration_1c, conf_version, date_info, conf_nordis_tarification} = req.body
+    const {client_name, client_full_name, inn, platform_version, configuration_1c, conf_version, date_info, conf_nordis_tarification, extensions} = req.body
     const dateInfo = new Date(Date.parse(date_info))
 
     const candidate = await Client.findOne({ inn,  configuration_1c })
@@ -29,6 +29,8 @@ router.post('/addClientInfo', async (req, res) => {
         candidate.date_info = dateInfo
         candidate.conf_nordis_tarification = conf_nordis_tarification
 
+        candidate.extensions = extensions
+
         await candidate.save()
         return res.status(200).json({message: 'Данные успешно обновлены в базе данных'})
     }
@@ -42,6 +44,7 @@ router.post('/addClientInfo', async (req, res) => {
         conf_version: conf_version,
         date_info: dateInfo,
         conf_nordis_tarification: conf_nordis_tarification,
+        extensions: extensions,
     })
 
     await client.save()
