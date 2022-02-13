@@ -21,7 +21,14 @@ const Modal = ({ active, setActive, clientItem }) => {
                             <div className="col">
                                 <h6 className="card-title">Используемая конфигурация: {clientItem.configuration_1c} версия ({clientItem.conf_version})</h6>
                                 <h6 className="card-title">Используемая версия Платформы 1С: {clientItem.platform_version}</h6>
-                                <h6 className="card-title">Тарификация {clientItem.conf_nordis_tarification}</h6>
+                                <h6 className="card-title">Тарификация:
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id="checkboxNoLabel"
+                                        checked={clientItem.conf_nordis_tarification}
+                                    />
+                                </h6>
                             </div>
                             <div className="col">
                                 <h5>Список расширений</h5>
@@ -35,15 +42,22 @@ const Modal = ({ active, setActive, clientItem }) => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            {extensions.map((extension, index) =>
-                                                <>
+                                        {extensions.map((extension, index) =>
+                                            <>
+                                                <tr>
                                                     <th scope="row">{index + 1}</th>
                                                     <td>{extension.name}</td>
                                                     <td>{extension.version}</td>
-                                                    <td>{extension.active}</td>
-                                                </>)}
-                                        </tr>
+                                                    <td className="td-content-center">
+                                                        <input
+                                                            className="form-check-input"
+                                                            type="checkbox"
+                                                            id="checkboxNoLabel"
+                                                            checked={extension.active}
+                                                        />
+                                                    </td>
+                                                </tr>
+                                            </>)}
                                     </tbody>
                                 </table>
                             </div>

@@ -30,3 +30,11 @@
 .modal__content.active {
     transform: scale(1);
 }
+
+.td-content-center {
+    text-align: center;
+}
+
+.border-left-5 {
+    border-left: 5px;
+}
