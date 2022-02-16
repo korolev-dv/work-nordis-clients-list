@@ -10,11 +10,12 @@ const ClientsList = ({clients, setModalActive, setClientItem}) => {
                 <thead className="clientsTableHeading">
                     <tr>
                         <th scope="col">№</th>
-                        <th scope="col">Контрагент</th>
-                        <th scope="col">ИНН</th>
-                        <th scope="col">Конфигурация 1С</th>
-                        <th scope="col">Версия</th>
-                        <th scope="col">Платформа</th>
+                        <th scope="col" style={{textAlign: "center"}}>Контрагент</th>
+                        <th scope="col" style={{textAlign: "center"}}>ИНН</th>
+                        <th scope="col" style={{textAlign: "center"}}>Конфигурация 1С</th>
+                        <th scope="col" style={{textAlign: "center"}}>Версия</th>
+                        <th scope="col" style={{textAlign: "center"}}>Платформа</th>
+                        <th scope="col" style={{textAlign: "center"}}>Тарификация</th>
                     </tr>
                 </thead>
                 <tbody>
