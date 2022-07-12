@@ -26,7 +26,7 @@ router.post('/addClientInfo', async (req, res) => {
         candidate.platform_version = platform_version
         candidate.configuration_1c = configuration_1c
         candidate.conf_version = conf_version
-        candidate.date_info = dateInfo
+        candidate.date_info = date_info
         candidate.conf_nordis_tarification = conf_nordis_tarification
 
         candidate.extensions = extensions
@@ -42,7 +42,7 @@ router.post('/addClientInfo', async (req, res) => {
         platform_version: platform_version,
         configuration_1c: configuration_1c,
         conf_version: conf_version,
-        date_info: dateInfo,
+        date_info: date_info,
         conf_nordis_tarification: conf_nordis_tarification,
         extensions: extensions,
     })
